@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
-@RestController
+@RestController("/api/v1")
 public class ContestController {
     private final ContestDataService contestDataService;
 
@@ -21,7 +21,7 @@ public class ContestController {
         this.contestDataService = _contestDataService;
     }
 
-    @PostMapping("/api/v1/get-upcoming-contests")
+    @PostMapping("/get-upcoming-contests")
     public ResponseEntity<ContestListResponse> getUpcomingContests(
         @RequestBody ContestListRequest contestListRequest
     ) {
