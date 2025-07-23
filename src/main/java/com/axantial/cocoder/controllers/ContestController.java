@@ -5,21 +5,21 @@ import com.axantial.cocoder.dtos.requests.ContestListRequest;
 import com.axantial.cocoder.dtos.responses.ContestListResponse;
 import com.axantial.cocoder.enums.ContestPlatform;
 import com.axantial.cocoder.services.ContestDataService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@RestController("/api/v1")
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/api/v1")
 public class ContestController {
     private final ContestDataService contestDataService;
-
-    public ContestController(ContestDataService _contestDataService) {
-        this.contestDataService = _contestDataService;
-    }
 
     @PostMapping("/get-upcoming-contests")
     public ResponseEntity<ContestListResponse> getUpcomingContests(
