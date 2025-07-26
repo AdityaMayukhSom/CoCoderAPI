@@ -18,7 +18,7 @@ public class ContestController {
 
     @GetMapping("/get-upcoming-contests")
     public ResponseEntity<ContestListResponse> getUpcomingContests(
-        @RequestParam(name = "platform") List<String> platformStrList
+        @RequestParam(name = "platforms") List<String> platformStrList
     ) {
         List<ContestData> contests = contestDataService.fetchUpcomingContestsByPlatformNames(platformStrList);
         String platformCSV = String.join(",", platformStrList);
