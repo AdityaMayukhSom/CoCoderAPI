@@ -31,7 +31,16 @@ public class ContestDataService {
         this.lcService = _lcService;
     }
 
-    public List<ContestData> fetchUpcomingContests(List<ContestPlatform> platforms) {
+
+    public List<ContestData> fetchUpcomingContestsByPlatformNames(List<String> platformStrList) {
+        List<ContestPlatform> platforms = new ArrayList<>();
+        for (String p : platformStrList) {
+            platforms.add(ContestPlatform.valueOf(p));
+        }
+        return this.fetchUpcomingContestsByPlatform(platforms);
+    }
+
+    public List<ContestData> fetchUpcomingContestsByPlatform(List<ContestPlatform> platforms) {
         List<CompletableFuture<List<ContestData>>> allFutures = new ArrayList<>();
 
         for (ContestPlatform platform : platforms) {

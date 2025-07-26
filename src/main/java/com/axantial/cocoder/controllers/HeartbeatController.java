@@ -11,7 +11,7 @@ import java.lang.management.ManagementFactory;
 import java.time.OffsetDateTime;
 
 @RestController
-@RequestMapping("/api/v1") // Base path for the heartbeat endpoint
+@RequestMapping("/v1") // Base path for the heartbeat endpoint
 public class HeartbeatController {
 
     @GetMapping("/heartbeat")

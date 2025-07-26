@@ -3,35 +3,36 @@ package com.axantial.cocoder.controllers;
 import com.axantial.cocoder.dtos.models.ContestData;
 import com.axantial.cocoder.dtos.requests.ContestListRequest;
 import com.axantial.cocoder.dtos.responses.ContestListResponse;
-import com.axantial.cocoder.enums.ContestPlatform;
 import com.axantial.cocoder.services.ContestDataService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/v1")
+@RequestMapping("/v1")
 public class ContestController {
     private final ContestDataService contestDataService;
+
+    @GetMapping("/get-upcoming-contests")
+    public ResponseEntity<ContestListResponse> getUpcomingContests(
+        @RequestParam(name = "platform") List<String> platformStrList
+    ) {
+        List<ContestData> contests = contestDataService.fetchUpcomingContestsByPlatformNames(platformStrList);
+        String platformCSV = String.join(",", platformStrList);
+        String message = String.format("Found %d contests for %s platforms", contests.size(), platformCSV);
+        return ResponseEntity.ok(new ContestListResponse(message, contests));
+    }
 
     @PostMapping("/get-upcoming-contests")
     public ResponseEntity<ContestListResponse> getUpcomingContests(
         @RequestBody ContestListRequest contestListRequest
     ) {
         List<String> platformStrList = contestListRequest.getPlatforms();
-        String platformCSV = String.join(", ", platformStrList);
-        List<ContestPlatform> platforms = new ArrayList<>();
-        for (String p : platformStrList) {
-            platforms.add(ContestPlatform.valueOf(p));
-        }
-        List<ContestData> contests = contestDataService.fetchUpcomingContests(platforms);
+        List<ContestData> contests = contestDataService.fetchUpcomingContestsByPlatformNames(platformStrList);
+        String platformCSV = String.join(",", platformStrList);
         String message = String.format("Found %d contests for %s platforms", contests.size(), platformCSV);
         return ResponseEntity.ok(new ContestListResponse(message, contests));
     }
