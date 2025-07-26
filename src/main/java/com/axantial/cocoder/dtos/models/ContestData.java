@@ -6,9 +6,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.Duration;
-import java.time.OffsetDateTime;
-
 @Data
 @Builder
 @AllArgsConstructor
@@ -16,8 +13,8 @@ import java.time.OffsetDateTime;
 public class ContestData {
     private ContestPlatform platform;
     private String displayName;
-    private OffsetDateTime beginTime;
-    private OffsetDateTime ceaseTime;
-    private Duration duration;
+    private String beginTime;
+    private String ceaseTime;
+    private String duration;
     private String contestLink;
 }

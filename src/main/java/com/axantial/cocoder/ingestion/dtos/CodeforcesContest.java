@@ -1,6 +1,6 @@
 package com.axantial.cocoder.ingestion.dtos;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,28 +11,28 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CodeforcesContest {
-    @JsonProperty("id")
+    @SerializedName("id")
     private Integer id;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name;
 
-    @JsonProperty("type")
+    @SerializedName("type")
     private String type;
 
-    @JsonProperty("phase")
+    @SerializedName("phase")
     private String phase;
 
-    @JsonProperty("frozen")
+    @SerializedName("frozen")
     private Boolean frozen;
 
-    @JsonProperty("durationSeconds")
+    @SerializedName("durationSeconds")
     private Integer durationSeconds;
 
-    @JsonProperty("startTimeSeconds")
+    @SerializedName("startTimeSeconds")
     private Integer startTimeSeconds;
 
-    @JsonProperty("relativeTimeSeconds")
+    @SerializedName("relativeTimeSeconds")
     private Integer relativeTimeSeconds;
 }
 

@@ -1,6 +1,6 @@
 package com.axantial.cocoder.ingestion.dtos;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,21 +11,21 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class LeetCodeContest {
-    @JsonProperty("title")
+    @SerializedName("title")
     private String title;
 
-    @JsonProperty("titleSlug")
+    @SerializedName("titleSlug")
     private String titleSlug;
 
-    @JsonProperty("startTime")
+    @SerializedName("startTime")
     private Integer startTime;
 
-    @JsonProperty("originStartTime")
+    @SerializedName("originStartTime")
     private Integer originStartTime;
 
-    @JsonProperty("duration")
+    @SerializedName("duration")
     private Integer duration;
 
-    @JsonProperty("cardImg")
+    @SerializedName("cardImg")
     private String cardImg;
 }

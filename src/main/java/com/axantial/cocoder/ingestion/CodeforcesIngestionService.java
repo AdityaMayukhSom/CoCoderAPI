@@ -62,9 +62,9 @@ public class CodeforcesIngestionService implements ContestDataIngestionService {
                 .builder()
                 .displayName(c.getName())
                 .platform(ContestPlatform.Codeforces)
-                .beginTime(beginTime)
-                .ceaseTime(ceaseTime)
-                .duration(duration)
+                .beginTime(beginTime.toString())
+                .ceaseTime(ceaseTime.toString())
+                .duration(duration.toString())
                 .contestLink(contestLink)
                 .build();
 

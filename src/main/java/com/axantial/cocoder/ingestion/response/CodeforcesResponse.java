@@ -1,7 +1,7 @@
 package com.axantial.cocoder.ingestion.response;
 
 import com.axantial.cocoder.ingestion.dtos.CodeforcesContest;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,9 +14,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CodeforcesResponse {
-    @JsonProperty("status")
+    @SerializedName("status")
     public String status;
-    
-    @JsonProperty("result")
+
+    @SerializedName("result")
     public List<CodeforcesContest> contests;
 }

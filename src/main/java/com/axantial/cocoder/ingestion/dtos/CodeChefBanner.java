@@ -1,6 +1,6 @@
 package com.axantial.cocoder.ingestion.dtos;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CodeChefBanner {
-    @JsonProperty("image")
+    @SerializedName("image")
     String image;
 
-    @JsonProperty("link")
+    @SerializedName("link")
     String link;
 }

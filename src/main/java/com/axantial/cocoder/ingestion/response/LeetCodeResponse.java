@@ -1,7 +1,7 @@
 package com.axantial.cocoder.ingestion.response;
 
 import com.axantial.cocoder.ingestion.dtos.LeetCodeData;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,6 +12,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class LeetCodeResponse {
-    @JsonProperty("data")
+    @SerializedName("data")
     private LeetCodeData data;
 }

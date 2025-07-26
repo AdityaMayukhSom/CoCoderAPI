@@ -1,6 +1,6 @@
 package com.axantial.cocoder.ingestion.dtos;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,6 +13,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class LeetCodeData {
-    @JsonProperty("topTwoContests")
+    @SerializedName("topTwoContests")
     private List<LeetCodeContest> topTwoContests;
 }

@@ -1,6 +1,9 @@
 spring:
   application:
     name: CoCoder
+  http:
+    converters:
+      preferred-json-mapper: gson
 
 server:
   port: ${PORT:8080}

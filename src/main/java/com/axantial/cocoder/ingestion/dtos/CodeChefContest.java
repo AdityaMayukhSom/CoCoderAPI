@@ -1,6 +1,6 @@
 package com.axantial.cocoder.ingestion.dtos;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,27 +9,27 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CodeChefContest {
-    @JsonProperty("contest_code")
+    @SerializedName("contest_code")
     String contestCode;
 
-    @JsonProperty("contest_name")
+    @SerializedName("contest_name")
     String contestName;
 
-    @JsonProperty("contest_start_date")
+    @SerializedName("contest_start_date")
     String contestStartDate;
 
-    @JsonProperty("contest_end_date")
+    @SerializedName("contest_end_date")
     String contestEndDate;
 
-    @JsonProperty("contest_start_date_iso")
+    @SerializedName("contest_start_date_iso")
     String contestStartDateISO;
 
-    @JsonProperty("contest_end_date_iso")
+    @SerializedName("contest_end_date_iso")
     String contestEndDateISO;
 
-    @JsonProperty("contest_duration")
+    @SerializedName("contest_duration")
     String contestDuration;
 
-    @JsonProperty("distinct_users")
+    @SerializedName("distinct_users")
     Integer distinctUsers;
 }

@@ -84,9 +84,9 @@ public class LeetCodeIngestionService implements ContestDataIngestionService {
                 .builder()
                 .displayName(c.getTitle())
                 .platform(ContestPlatform.LeetCode)
-                .beginTime(beginTime)
-                .ceaseTime(ceaseTime)
-                .duration(duration)
+                .beginTime(beginTime.toString())
+                .ceaseTime(ceaseTime.toString())
+                .duration(duration.toString())
                 .contestLink(contestLink)
                 .build();
 

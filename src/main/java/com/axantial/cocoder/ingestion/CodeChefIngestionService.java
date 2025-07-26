@@ -58,9 +58,9 @@ public class CodeChefIngestionService implements ContestDataIngestionService {
                 .builder()
                 .displayName(c.getContestName())
                 .platform(ContestPlatform.CodeChef)
-                .beginTime(beginTime)
-                .ceaseTime(ceaseTime)
-                .duration(duration)
+                .beginTime(beginTime.toString())
+                .ceaseTime(ceaseTime.toString())
+                .duration(duration.toString())
                 .contestLink(contestLink)
                 .build();
 
